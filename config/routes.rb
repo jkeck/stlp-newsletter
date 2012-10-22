@@ -1,4 +1,6 @@
 StlpNewsletter::Application.routes.draw do
+  resources :quotes
+
   resources :next_steps
 
   resources :newsletters
