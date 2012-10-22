@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20121022190532) do
 
   create_table "newsletters", :force => true do |t|
-    t.string   "session"
+    t.integer  "session"
     t.string   "dates"
     t.integer  "year"
     t.datetime "created_at", :null => false
@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(:version => 20121022190532) do
   create_table "next_steps", :force => true do |t|
     t.text     "body"
     t.text     "steps"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "newsletter_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
