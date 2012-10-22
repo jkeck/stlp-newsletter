@@ -1,0 +1,8 @@
+<%- if @newsletter and @newsletter.year -%>
+  <%#= link_to("STLP #{@newsletter.year}", newsletter_find_path(:year => @newsletter.year), :class=>"brand") %>
+  <ul class="nav">
+    <%- Newsletter.where(:year => @newsletter.year).each do |newsletter| %>
+      <li<%= " class=active" if newsletter.session == @newsletter.session %>><%= link_to("Session #{newsletter.session}", newsletter_find_path(:year=>newsletter.year, :session=>newsletter.session)) %></li>
+    <%- end -%>
+  </ul>
+<%- end -%>

@@ -69,6 +69,15 @@ class NewslettersController < ApplicationController
     end
   end
 
+  def find
+    @newsletter = Newsletter.where(params.select{|k,v| ["year","session"].include?(k) }).first
+    if @newsletter.blank?
+      raise ActionController::RoutingError.new('Newsletter Not Found')
+    else
+      render "show"
+    end
+  end
+
   # DELETE /newsletters/1
   # DELETE /newsletters/1.json
   def destroy

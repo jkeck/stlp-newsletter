@@ -14,7 +14,7 @@
   <body class="<%= [params[:controller], params[:action]].join(' ') %>">
     <header class="navbar navbar-fixed-top">
       <nav class="navbar-inner">
-        <div class="container"></div>
+        <div class="container"><%= render "shared/navigation" %></div>
       </nav>
     </header>
     <div id="main" role="main">

@@ -10,6 +10,8 @@ StlpNewsletter::Application.routes.draw do
   resources :next_steps
 
   resources :newsletters
+  
+  match 'stlp-:year(/:session)' => "newsletters#find", :as => "newsletter_find"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
