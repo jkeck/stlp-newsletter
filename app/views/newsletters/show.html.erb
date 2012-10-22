@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Session:</b>
+  <%= @newsletter.session %>
+</p>
+
+<p>
+  <b>Dates:</b>
+  <%= @newsletter.dates %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @newsletter.year %>
+</p>
+
+
+<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
+<%= link_to 'Back', newsletters_path %>
