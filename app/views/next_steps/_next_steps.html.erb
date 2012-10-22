@@ -1,0 +1,12 @@
+<%- next_steps ||= @next_step -%>
+<%- unless next_steps.blank? -%>
+  <h3>Next Steps</h3>
+  <%= next_steps.body %>
+  <%- unless next_steps.split_steps.blank? -%>
+    <ol>
+      <%- next_steps.split_steps.each do |step| -%>
+        <li class="<%= cycle('even', 'odd') %>"><%= step %></li>
+      <%- end -%>
+    </ol>
+  <%- end -%>
+<%- end -%>

@@ -1,19 +1,30 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Session:</b>
-  <%= @newsletter.session %>
-</p>
-
-<p>
-  <b>Dates:</b>
-  <%= @newsletter.dates %>
-</p>
-
-<p>
-  <b>Year:</b>
-  <%= @newsletter.year %>
-</p>
+<div class="row session-details">
+  <div class="span2">Session <%= @newsletter.session %></div>
+  <div class="span2 offset8"><%= @newsletter.dates %>, <%= @newsletter.year %></div>
+</div>
+<div class="row">
+  <div class="span12">
+    <h1>
+      <span class="hidden-phone">Stanford Technical Leadership Program</span>
+      <span class="visible-phone">STLP</span>
+    </h2>
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+    <h2 class="byline">
+      <span class="hidden-phone">Session follow up note</span>
+      <span class="visible-phone">Follow up</span>
+    </h2>
+  </div>
+</div>
+<div class="row">
+  <div class="span8"><%# maybe some main content here%></div>
+  <%- if @newsletter.next_step -%>
+    <div class="span4"><%= render :partial => "next_steps/next_steps", :locals => {:next_steps => @newsletter.next_step} %></div>
+  <%- end -%>
+</div>
 
 
 <%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |

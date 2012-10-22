@@ -1,0 +1,18 @@
+<%- next_steps ||= (@next_step || NextStep.new) -%>
+<%= form_for(next_steps, :html => {:class => "next_steps"}) do |f| %>
+  <div class="modal-body">
+    <div>
+      <%= f.label :body %>
+      <%= f.text_area :body, :rows => 5 %>
+    </div>
+    <div>
+      <%= f.label :steps, :class=>"with-help" %> <span class="help">(start new steps with * to create a numbered bullet)</span>
+      <%= f.text_area :steps %>
+    </div>
+  </div>
+  <%= f.hidden_field(:newsletter_id, :value => @newsletter[:id]) unless @newsletter.blank?  %>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>  
+<%- end -%>

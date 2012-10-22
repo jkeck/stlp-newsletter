@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :session %><br />
-    <%= f.text_field :session %>
+    <%= f.text_field :session, :disabled => !@newsletter.session.blank? %>
   </div>
   <div class="field">
     <%= f.label :dates %><br />
@@ -21,9 +21,9 @@
   </div>
   <div class="field">
     <%= f.label :year %><br />
-    <%= f.number_field :year %>
+    <%= f.text_field :year, :size => "4" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit(:class=>"btn") %>
   </div>
 <% end %>

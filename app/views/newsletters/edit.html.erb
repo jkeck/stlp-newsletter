@@ -3,4 +3,15 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @newsletter %> |
-<%= link_to 'Back', newsletters_path %>
+<%= link_to 'Back', newsletters_path %> | 
+<%= link_to_modal "#{@newsletter.next_step.blank? ? "Add" : "Edit"} Next Steps", new_next_step_path(:newsletter=>@newsletter[:id]), "#next_steps" %>
+
+ 
+
+<div class="modal hide" id="next_steps" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Next Steps for STLP Session <%= @newsletter.session %></h3>
+  </div>
+  <%= render :partial => "next_steps/modal_form", :locals => {:next_steps => @newsletter.next_step} %>
+</div>
