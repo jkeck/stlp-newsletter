@@ -1,4 +1,6 @@
 StlpNewsletter::Application.routes.draw do
+  resources :next_steps
+
   resources :newsletters
 
   # The priority is based upon order of creation:

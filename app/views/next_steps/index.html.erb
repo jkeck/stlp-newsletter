@@ -1,0 +1,25 @@
+<h1>Listing next_steps</h1>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th>Steps</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @next_steps.each do |next_step| %>
+  <tr>
+    <td><%= next_step.body %></td>
+    <td><%= next_step.steps %></td>
+    <td><%= link_to 'Show', next_step %></td>
+    <td><%= link_to 'Edit', edit_next_step_path(next_step) %></td>
+    <td><%= link_to 'Destroy', next_step, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Next step', new_next_step_path %>

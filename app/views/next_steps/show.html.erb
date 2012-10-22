@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Body:</b>
+  <%= @next_step.body %>
+</p>
+
+<p>
+  <b>Steps:</b>
+  <%= @next_step.steps %>
+</p>
+
+
+<%= link_to 'Edit', edit_next_step_path(@next_step) %> |
+<%= link_to 'Back', next_steps_path %>
