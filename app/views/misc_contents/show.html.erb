@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @misc_content.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @misc_content.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_misc_content_path(@misc_content) %> |
+<%= link_to 'Back', misc_contents_path %>

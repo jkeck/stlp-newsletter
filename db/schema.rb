@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022195056) do
+ActiveRecord::Schema.define(:version => 20121022195851) do
 
   create_table "assignments", :force => true do |t|
     t.text     "description"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(:version => 20121022195056) do
   create_table "key_points", :force => true do |t|
     t.text     "description"
     t.text     "points"
+    t.integer  "newsletter_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "misc_contents", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
     t.integer  "newsletter_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false

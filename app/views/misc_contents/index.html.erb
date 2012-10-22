@@ -1,0 +1,25 @@
+<h1>Listing misc_contents</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @misc_contents.each do |misc_content| %>
+  <tr>
+    <td><%= misc_content.title %></td>
+    <td><%= misc_content.body %></td>
+    <td><%= link_to 'Show', misc_content %></td>
+    <td><%= link_to 'Edit', edit_misc_content_path(misc_content) %></td>
+    <td><%= link_to 'Destroy', misc_content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Misc content', new_misc_content_path %>

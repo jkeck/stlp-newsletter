@@ -1,4 +1,6 @@
 StlpNewsletter::Application.routes.draw do
+  resources :misc_contents
+
   resources :key_points
 
   resources :assignments
