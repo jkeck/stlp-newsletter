@@ -3,4 +3,5 @@ class Newsletter < ActiveRecord::Base
   
   has_one  :next_step
   has_many :quotes
+  has_many :assignments
 end

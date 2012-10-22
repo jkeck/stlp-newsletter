@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022192744) do
+ActiveRecord::Schema.define(:version => 20121022193514) do
+
+  create_table "assignments", :force => true do |t|
+    t.text     "description"
+    t.string   "link"
+    t.integer  "newsletter_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "newsletters", :force => true do |t|
     t.integer  "session"
