@@ -13,6 +13,7 @@ class NextStepsController < ApplicationController
   # GET /next_steps/1
   # GET /next_steps/1.json
   def show
+    redirect_to :back, notice: "'Next Steps' Updated" and return
     @next_step = NextStep.find(params[:id])
 
     respond_to do |format|

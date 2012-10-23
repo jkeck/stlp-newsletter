@@ -13,6 +13,7 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.json
   def show
+    redirect_to :back, notice: "'Quotes' Updated" and return
     @quote = Quote.find(params[:id])
 
     respond_to do |format|
