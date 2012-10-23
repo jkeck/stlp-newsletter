@@ -1,0 +1,12 @@
+<%- key_points ||= @key_point -%>
+<%- unless key_points.blank? -%>
+  <h3>Key Points</h3>
+  <%= key_points.description %>
+  <%- unless key_points.split_points.blank? -%>
+    <ol>
+      <%- key_points.split_points.each do |point| -%>
+        <li class="<%= cycle('even', 'odd') %>"><%= point %></li>
+      <%- end -%>
+    </ol>
+  <%- end -%>
+<%- end -%>

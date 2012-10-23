@@ -25,3 +25,7 @@
 <div class="row">
   <div class="span12"><%= render :partial => "quotes/quotes", :locals => {:quotes => @newsletter.quotes}%></div>
 </div>
+<div class="row">
+  <div class="span4"><%= render :partial => "key_points/key_points", :locals => {:key_points => @newsletter.key_point} %></div>
+  <div class="span8"></div>
+</div>

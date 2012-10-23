@@ -1,0 +1,24 @@
+<%- key_points ||= (@key_point || KeyPoint.new) -%>
+<div class="modal hide" id="key_points" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Key Points for STLP Session <%= @newsletter.session %></h3>
+  </div>
+  <%= form_for(key_points, :html => {:class => "key_points"}) do |f| %>
+    <div class="modal-body">
+      <div>
+        <%= f.label :description %>
+        <%= f.text_area :description, :rows => 5 %>
+      </div>
+      <div>
+        <%= f.label :points, :class=>"with-help" %> <span class="help">(start new points with * to create a numbered bullet)</span>
+        <%= f.text_area :points %>
+      </div>
+    </div>
+    <%= f.hidden_field(:newsletter_id, :value => @newsletter[:id]) unless @newsletter.blank?  %>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <button class="btn btn-primary">Save changes</button>
+    </div>  
+  <%- end -%>
+</div>

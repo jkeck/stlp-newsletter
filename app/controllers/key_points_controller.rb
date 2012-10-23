@@ -44,7 +44,7 @@ class KeyPointsController < ApplicationController
 
     respond_to do |format|
       if @key_point.save
-        format.html { redirect_to @key_point, notice: 'Key point was successfully created.' }
+        format.html { redirect_to :back, notice: 'Key point was successfully created.' }
         format.json { render json: @key_point, status: :created, location: @key_point }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class KeyPointsController < ApplicationController
 
     respond_to do |format|
       if @key_point.update_attributes(params[:key_point])
-        format.html { redirect_to @key_point, notice: 'Key point was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Key point was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

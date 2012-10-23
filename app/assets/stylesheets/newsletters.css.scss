@@ -27,11 +27,10 @@
 	.section {
 		margin: 5px 0;
 	}
-}
-
-form.next_steps {
-	textarea {
-		width: 95%;
+	form.next_steps, form.key_points {
+		textarea {
+			width: 95%;
+		}
 	}
 }
 
