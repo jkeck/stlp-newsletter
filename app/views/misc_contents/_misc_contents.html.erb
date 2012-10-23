@@ -1,0 +1,8 @@
+<%- @newsletter.misc_contents.each do |content| -%>
+  <div class="row">
+    <div class="span12">
+      <h3><%= content.title %></h3>
+      <div><%= content.body.html_safe %></div>
+    </div>
+  </div>
+<%- end -%>

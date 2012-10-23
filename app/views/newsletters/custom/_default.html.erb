@@ -7,7 +7,7 @@
     <h1>
       <span class="hidden-phone">Stanford Technical Leadership Program</span>
       <span class="visible-phone">STLP</span>
-    </h2>
+    </h1>
   </div>
 </div>
 <div class="row">
@@ -29,3 +29,5 @@
   <div class="span4"><%= render :partial => "key_points/key_points", :locals => {:key_points => @newsletter.key_point} %></div>
   <div class="span4 offset4"><%= render :partial => "assignments/assignments", :locals => {:assignments => @newsletter.assignments} %></div>
 </div>
+
+<%= render :partial => "misc_contents/misc_contents", :locals => {:misc_contents => @newsletter.misc_contents} %>
