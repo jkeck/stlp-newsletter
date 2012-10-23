@@ -1,28 +1,4 @@
-<p id="notice"><%= notice %></p>
-<div class="row session-details">
-  <div class="span2">Session <%= @newsletter.session %></div>
-  <div class="span2 offset8"><%= @newsletter.dates %>, <%= @newsletter.year %></div>
-</div>
-<div class="row">
-  <div class="span12">
-    <h1>
-      <span class="hidden-phone">Stanford Technical Leadership Program</span>
-      <span class="visible-phone">STLP</span>
-    </h2>
-  </div>
-</div>
-<div class="row">
-  <div class="span12">
-    <h2 class="byline">
-      <span class="hidden-phone">Session follow up note</span>
-      <span class="visible-phone">Follow up</span>
-    </h2>
-  </div>
-</div>
-<div class="row">
-  <div class="span8"><%= render :partial => "assignments/assignments", :locals => {:assignments => @newsletter.assignments} %></div>
-  <div class="span4"><%= render :partial => "next_steps/next_steps", :locals => {:next_steps => @newsletter.next_step} %></div>
-</div>
+<%= render_newsletter %>
 
 <%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
 <%= link_to 'Back', newsletters_path %>

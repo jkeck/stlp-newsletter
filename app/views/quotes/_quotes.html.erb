@@ -1,0 +1,10 @@
+<%- quotes ||= @quote -%>
+
+<%- unless quotes.blank? -%>
+  <%- quotes.each do |quote| -%>
+    <blockquote>
+      <p><%= quote.quote %></p>
+      <small><%= quote.author %></small>
+    </blockquote>
+  <%- end -%>
+<%- end -%>
