@@ -13,7 +13,6 @@ class AssignmentsController < ApplicationController
   # GET /assignments/1
   # GET /assignments/1.json
   def show
-    redirect_to :back, notice: "'Assignments' Updated" and return
     @assignment = Assignment.find(params[:id])
 
     respond_to do |format|
@@ -45,7 +44,7 @@ class AssignmentsController < ApplicationController
 
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
+        format.html { redirect_to :back, notice: 'Assignment was successfully created.' }
         format.json { render json: @assignment, status: :created, location: @assignment }
       else
         format.html { render action: "new" }
@@ -61,7 +60,7 @@ class AssignmentsController < ApplicationController
 
     respond_to do |format|
       if @assignment.update_attributes(params[:assignment])
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Assignment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

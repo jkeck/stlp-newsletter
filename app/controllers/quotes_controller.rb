@@ -13,7 +13,6 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.json
   def show
-    redirect_to :back, notice: "'Quotes' Updated" and return
     @quote = Quote.find(params[:id])
 
     respond_to do |format|
@@ -45,7 +44,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to @quote, notice: 'Quote was successfully created.' }
+        format.html { redirect_to :back, notice: 'Quote was successfully created.' }
         format.json { render json: @quote, status: :created, location: @quote }
       else
         format.html { render action: "new" }
@@ -61,7 +60,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
-        format.html { redirect_to @quote, notice: 'Quote was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Quote was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

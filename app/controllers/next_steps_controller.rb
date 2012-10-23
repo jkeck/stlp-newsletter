@@ -13,7 +13,6 @@ class NextStepsController < ApplicationController
   # GET /next_steps/1
   # GET /next_steps/1.json
   def show
-    redirect_to :back, notice: "'Next Steps' Updated" and return
     @next_step = NextStep.find(params[:id])
 
     respond_to do |format|
@@ -45,7 +44,7 @@ class NextStepsController < ApplicationController
 
     respond_to do |format|
       if @next_step.save
-        format.html { redirect_to @next_step, notice: 'Next step was successfully created.' }
+        format.html { redirect_to :back, notice: 'Next step was successfully created.' }
         format.json { render json: @next_step, status: :created, location: @next_step }
       else
         format.html { render action: "new" }
@@ -61,7 +60,7 @@ class NextStepsController < ApplicationController
 
     respond_to do |format|
       if @next_step.update_attributes(params[:next_step])
-        format.html { redirect_to @next_step, notice: 'Next step was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Next step was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
