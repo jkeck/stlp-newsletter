@@ -1,0 +1,27 @@
+<h1>Listing main_contents</h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Body</th>
+    <th>Body overlay</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @main_contents.each do |main_content| %>
+  <tr>
+    <td><%= main_content.image %></td>
+    <td><%= main_content.body %></td>
+    <td><%= main_content.body_overlay %></td>
+    <td><%= link_to 'Show', main_content %></td>
+    <td><%= link_to 'Edit', edit_main_content_path(main_content) %></td>
+    <td><%= link_to 'Destroy', main_content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Main content', new_main_content_path %>

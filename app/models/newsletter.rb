@@ -6,4 +6,5 @@ class Newsletter < ActiveRecord::Base
   has_many :assignments
   has_one  :key_point
   has_many :misc_contents
+  has_one  :main_content
 end

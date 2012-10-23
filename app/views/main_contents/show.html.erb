@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Image:</b>
+  <%= @main_content.image %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @main_content.body %>
+</p>
+
+<p>
+  <b>Body overlay:</b>
+  <%= @main_content.body_overlay %>
+</p>
+
+
+<%= link_to 'Edit', edit_main_content_path(@main_content) %> |
+<%= link_to 'Back', main_contents_path %>

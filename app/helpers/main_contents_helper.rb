@@ -1,0 +1,2 @@
+module MainContentsHelper
+end
