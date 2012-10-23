@@ -44,7 +44,7 @@ class MiscContentsController < ApplicationController
 
     respond_to do |format|
       if @misc_content.save
-        format.html { redirect_to @misc_content, notice: 'Misc content was successfully created.' }
+        format.html { redirect_to :back, notice: 'Misc content was successfully created.' }
         format.json { render json: @misc_content, status: :created, location: @misc_content }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class MiscContentsController < ApplicationController
 
     respond_to do |format|
       if @misc_content.update_attributes(params[:misc_content])
-        format.html { redirect_to @misc_content, notice: 'Misc content was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Misc content was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
