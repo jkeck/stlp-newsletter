@@ -20,12 +20,9 @@
   </div>
 </div>
 <div class="row">
-  <div class="span8"><%# maybe some main content here%></div>
-  <%- if @newsletter.next_step -%>
-    <div class="span4"><%= render :partial => "next_steps/next_steps", :locals => {:next_steps => @newsletter.next_step} %></div>
-  <%- end -%>
+  <div class="span8"><%= render :partial => "assignments/assignments", :locals => {:assignments => @newsletter.assignments} %></div>
+  <div class="span4"><%= render :partial => "next_steps/next_steps", :locals => {:next_steps => @newsletter.next_step} %></div>
 </div>
-
 
 <%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
 <%= link_to 'Back', newsletters_path %>
