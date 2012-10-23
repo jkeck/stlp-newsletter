@@ -13,6 +13,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments/1
   # GET /assignments/1.json
   def show
+    redirect_to :back, notice: "'Assignments' Updated" and return
     @assignment = Assignment.find(params[:id])
 
     respond_to do |format|
