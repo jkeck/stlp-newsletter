@@ -1,0 +1,23 @@
+<div class="modal hide" id="quotes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Quotes for STLP Session <%= @newsletter.session %></h3>
+  </div>
+  <div class="modal-body">
+    <%- quotes.each do |quote| -%>
+      <%= form_for(quote, :html => {:class => "quotes form-inline"}) do |f| %>
+        <%= f.text_field :quote, :class => "input-small" %> by <%= f.text_field :author, :class => "input-small" %>
+        <%= f.hidden_field(:newsletter_id, :value => @newsletter[:id]) unless @newsletter.blank?  %>
+        <%= f.button :add, :class => "btn" %>
+      <%- end -%>
+    <%- end -%>
+    <%= form_for(Quote.new, :html => {:class => "quotes form-inline"}) do |f| %>
+      <%= f.text_field :quote, :class => "input-small", :width => "50%" %> by <%= f.text_field :author, :class => "input-small" %>
+      <%= f.hidden_field(:newsletter_id, :value => @newsletter[:id]) unless @newsletter.blank?  %>
+      <%= f.button :add, :class => "btn" %>
+    <%- end -%>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+  </div>
+</div>

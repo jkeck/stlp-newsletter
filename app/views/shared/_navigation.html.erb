@@ -1,10 +1,10 @@
-<%= link_to("STLP #{@newsletter.year}", newsletter_find_path(:year => @newsletter.year), :class=>"brand") %>
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-</a>
 <%- if @newsletter and @newsletter.year -%>
+  <%= link_to("STLP #{@newsletter.year}", newsletter_find_path(:year => @newsletter.year), :class=>"brand") %>
+  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </a>
   <div class="nav-collapse">
     <ul class="nav">
       <%- Newsletter.where(:year => @newsletter.year).each do |newsletter| %>
