@@ -19,7 +19,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="span8"><%= render :partial => "assignments/assignments", :locals => {:assignments => @newsletter.assignments} %></div>
+  <div class="span8"></div>
   <div class="span4"><%= render :partial => "next_steps/next_steps", :locals => {:next_steps => @newsletter.next_step} %></div>
 </div>
 <div class="row">
@@ -27,5 +27,5 @@
 </div>
 <div class="row">
   <div class="span4"><%= render :partial => "key_points/key_points", :locals => {:key_points => @newsletter.key_point} %></div>
-  <div class="span8"></div>
+  <div class="span4 offset4"><%= render :partial => "assignments/assignments", :locals => {:assignments => @newsletter.assignments} %></div>
 </div>
