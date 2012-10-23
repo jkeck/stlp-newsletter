@@ -19,7 +19,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="span8"></div>
+  <div class="span8"><%= render :partial => "main_contents/main_contents", :locals => {:main_contents => @newsletter.main_content} %></div>
   <div class="span4"><%= render :partial => "next_steps/next_steps", :locals => {:next_steps => @newsletter.next_step} %></div>
 </div>
 <div class="row">

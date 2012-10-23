@@ -1,0 +1,7 @@
+<%- main_contents ||= @main_content -%>
+<%- unless main_contents.blank? -%>
+  <div class="main_content_image">
+    <%= image_tag(main_contents.image) %>
+    <div class="body<%= " overlay" if main_contents.body_overlay %>"><%= main_contents.body %></div>
+  </div>
+<%- end -%>
