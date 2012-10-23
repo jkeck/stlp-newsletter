@@ -1,0 +1,29 @@
+<%- main_contents ||= (@main_content || MainContent.new) -%>
+<div class="modal hide" id="main_content" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Main Content for STLP Session <%= @newsletter.session %></h3>
+  </div>
+  <%= form_for(main_contents, :html => {:class => "main_contents"}) do |f| %>
+    <div class="modal-body">
+      <div class="field">
+        <%= f.label :image, "Image URL" %>
+        <%= f.text_field :image %>
+      </div>
+      <div class="field">
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+      </div>
+      <div class="field">
+        <h5>Overlay body on top of image?</h5>
+        <%= f.label :body_overlay, "Yes" %>
+        <%= f.check_box :body_overlay %>
+      </div>
+    </div>
+    <%= f.hidden_field(:newsletter_id, :value => @newsletter[:id]) unless @newsletter.blank?  %>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <button class="btn btn-primary">Save changes</button>
+    </div>  
+  <%- end -%>
+</div>

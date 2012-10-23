@@ -24,10 +24,16 @@
 	#quote_quote {
 		width: 50%;
 	}
+	#main_content_image {
+		width: 95%;
+	}
+	[for=main_content_body_overlay] {
+		display: inline-block;
+	}
 	.section {
 		margin: 5px 0;
 	}
-	form.next_steps, form.key_points {
+	form.next_steps, form.key_points, form.main_contents {
 		textarea {
 			width: 95%;
 		}
