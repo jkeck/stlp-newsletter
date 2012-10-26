@@ -7,11 +7,14 @@
 <%= link_to_modal "#{@newsletter.quotes.blank? ? "Add" : "Add/Edit"} Quotes", new_quote_path(:newsletter_id=>@newsletter[:id]), "#quotes" %>
 <%= link_to_modal "#{@newsletter.assignments.blank? ? "Add" : "Add/Edit"} Assignments", new_assignment_path(:newsletter_id=>@newsletter[:id]), "#assignments" %>
 <%= link_to_modal "#{@newsletter.key_point.blank? ? "Add" : "Edit"} Key Points", new_key_point_path(:newsletter_id=>@newsletter[:id]), "#key_points" %>
+<%= link_to_modal "#{@newsletter.further_readings.blank? ? "Add" : "Add/Edit"} Further Readings", new_misc_content_path(:newsletter_id=>@newsletter[:id]), "#further_readings" %>
 <%= link_to_modal "#{@newsletter.misc_contents.blank? ? "Add" : "Add/Edit"} Misc Content", new_misc_content_path(:newsletter_id=>@newsletter[:id]), "#misc_contents" %>
 
-<%= render :partial => "main_contents/modal_form",  :locals => {:main_contents  => @newsletter.main_content} %>
-<%= render :partial => "next_steps/modal_form",     :locals => {:next_steps     => @newsletter.next_step} %>
-<%= render :partial => "quotes/modal_form",         :locals => {:quotes         => @newsletter.quotes} %>
-<%= render :partial => "assignments/modal_form",    :locals => {:assignments    => @newsletter.assignments} %>
-<%= render :partial => "key_points/modal_form",     :locals => {:key_points     => @newsletter.key_point} %>
-<%= render :partial => "misc_contents/modal_form",  :locals => {:misc_contents  => @newsletter.misc_contents} %>
+
+<%= render :partial => "main_contents/modal_form",     :locals => {:main_contents     => @newsletter.main_content} %>
+<%= render :partial => "next_steps/modal_form",        :locals => {:next_steps        => @newsletter.next_step} %>
+<%= render :partial => "quotes/modal_form",            :locals => {:quotes            => @newsletter.quotes} %>
+<%= render :partial => "assignments/modal_form",       :locals => {:assignments       => @newsletter.assignments} %>
+<%= render :partial => "key_points/modal_form",        :locals => {:key_points        => @newsletter.key_point} %>
+<%= render :partial => "misc_contents/modal_form",     :locals => {:misc_contents     => @newsletter.misc_contents} %>
+<%= render :partial => "further_readings/modal_form",  :locals => {:further_readings  => @newsletter.further_readings} %>

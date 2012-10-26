@@ -1,0 +1,35 @@
+<div class="modal hide" id="further_readings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Further Readings for STLP Session <%= @newsletter.session %></h3>
+  </div>
+  <div class="modal-body">
+    <div class="section">
+      <%= form_for(FurtherReading.new, :html => {:class => "further_readings"}) do |f| %>
+        <%= f.label :url, "URL" %>
+        <%= f.text_field :url %>
+        <%= f.label :description %>
+        <%= f.text_area :description, :rows => 5 %>
+        <%= f.hidden_field(:newsletter_id, :value => @newsletter[:id]) unless @newsletter.blank?  %>
+        <br/>
+        <%= f.button :add, :class => "btn" %>
+      <%- end -%>
+    </div>
+    <%- further_readings.each do |reading| -%>
+      <div class="section">
+        <%= form_for(reading, :html => {:class => "further_readings"}) do |f| %>
+          <%= f.label :url, "URL" %>
+          <%= f.text_field :url %>
+          <%= f.label :description %>
+          <%= f.text_area :description, :rows => 5 %>
+          <%= f.hidden_field(:newsletter_id, :value => @newsletter[:id]) unless @newsletter.blank?  %>
+          <br/>
+          <%= f.button :save, :class => "btn" %>
+        <%- end -%>
+      </div>
+    <%- end -%>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+  </div>
+</div>
