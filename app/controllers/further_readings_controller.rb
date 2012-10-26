@@ -44,7 +44,7 @@ class FurtherReadingsController < ApplicationController
 
     respond_to do |format|
       if @further_reading.save
-        format.html { redirect_to @further_reading, notice: 'Further reading was successfully created.' }
+        format.html { redirect_to :back, notice: 'Further reading was successfully created.' }
         format.json { render json: @further_reading, status: :created, location: @further_reading }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class FurtherReadingsController < ApplicationController
 
     respond_to do |format|
       if @further_reading.update_attributes(params[:further_reading])
-        format.html { redirect_to @further_reading, notice: 'Further reading was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Further reading was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
