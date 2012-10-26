@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @further_reading.url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @further_reading.description %>
+</p>
+
+<p>
+  <b>Newsletter:</b>
+  <%= @further_reading.newsletter %>
+</p>
+
+
+<%= link_to 'Edit', edit_further_reading_path(@further_reading) %> |
+<%= link_to 'Back', further_readings_path %>

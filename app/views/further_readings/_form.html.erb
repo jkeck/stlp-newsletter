@@ -1,0 +1,29 @@
+<%= form_for(@further_reading) do |f| %>
+  <% if @further_reading.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@further_reading.errors.count, "error") %> prohibited this further_reading from being saved:</h2>
+
+      <ul>
+      <% @further_reading.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :newsletter %><br />
+    <%= f.text_field :newsletter %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
