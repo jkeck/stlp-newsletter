@@ -1,6 +1,9 @@
 <div class="row session-details">
   <div class="span10">
-    <h1>Highlight Reel</h1>
+    <h1>
+      <span class="hidden-phone">STLP Session <%= @newsletter.session %> Highlight Reel</span>
+      <span class="visible-phone">STLP Highlight Reel</span>
+    </h1>
   </div>
   <div class="span2">Session <%= @newsletter.session %><br/><%= @newsletter.dates %></div>
 </div>
