@@ -8,7 +8,9 @@
   <%- quotes.each do |quote| -%>
     <blockquote>
       <p><%= quote.quote %></p>
-      <small><%= quote.author %></small>
+      <%- unless quote.author.blank? -%>
+        <small><%= quote.author %></small>
+      <%- end -%>
     </blockquote>
   <%- end -%>
 <%- end -%>
