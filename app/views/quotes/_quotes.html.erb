@@ -1,7 +1,10 @@
 <%- quotes ||= @quote -%>
 
 <%- unless quotes.blank? -%>
-  <h3>Quotes from the session</h3>
+  <h3>
+    <span class="hidden-phone">Quotes from the session</span>
+    <span class="visible-phone">Quotes</span>
+  </h3>
   <%- quotes.each do |quote| -%>
     <blockquote>
       <p><%= quote.quote %></p>
