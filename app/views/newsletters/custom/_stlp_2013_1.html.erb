@@ -5,7 +5,9 @@
   <div class="span2">Session <%= @newsletter.session %><br/><%= @newsletter.dates %></div>
 </div>
 <div class="row">
-  <div class="span6"><%= render :partial => "main_contents/main_contents", :locals => {:main_contents => @newsletter.main_content} %></div>
+  <div class="span6">
+    <%= render :partial => "carousels/carousel", :locals => {:carousels => @newsletter.carousels} %>
+  </div>
   <div class="span1"><h2 class="vertical-text hidden-phone">Simplify</h2></div>
   <div class="span5"><%= render :partial => "next_steps/next_steps", :locals => {:next_steps => @newsletter.next_step} %></div>
 </div>
