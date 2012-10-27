@@ -18,7 +18,7 @@ module ApplicationHelper
         <div class="span2">Session #{ @newsletter.session }</div>
         <div class="span2 offset8">#{ @newsletter.dates }</div>
       </div>
-      <div class="row">
+      <div class="row title">
         <div class="span12">
           <h1>
             <span class="hidden-phone">Stanford Technical Leadership Program</span>
@@ -26,9 +26,9 @@ module ApplicationHelper
           </h1>
         </div>
       </div>
-      <div class="row">
+      <div class="row byline">
         <div class="span12">
-          <h2 class="byline">
+          <h2>
             <span class="hidden-phone">Session follow up note</span>
             <span class="visible-phone">Follow up</span>
           </h2>
