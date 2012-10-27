@@ -1,7 +1,7 @@
 <%- further_readings ||= @further_readings -%>
 <%- unless further_readings.blank? -%>
   <h3>Further Reading</h3>
-  <ul class="unstyled">
+  <ul>
     <%- further_readings.each do |reading| -%>
       <li><%= link_to(reading.description, reading.url) %></li>
     <%- end -%>
