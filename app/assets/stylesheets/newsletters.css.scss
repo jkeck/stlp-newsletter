@@ -17,10 +17,14 @@
 	h2.byline {
 		text-align: center;
 	}
+	
+	&.find, &.show {
+		&.stlp-2013-1 {
+			@include section-headers;
+		}
+	}
 }
-.stlp-2013-1 {
-	@include section-headers;
-}
+
 .modal {
 	form {
 	  padding: 0;	
