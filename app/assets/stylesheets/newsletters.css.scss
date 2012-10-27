@@ -2,10 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.newsletters {
-	h1 {
-		text-align: center;
+@mixin section-headers {
+	h3 {
+		border-bottom: 1px solid #990000;
 	}
+}
+
+.newsletters {
 	.session-details {
 		@media(max-width: 767px){
 			text-align: center;
@@ -15,7 +18,9 @@
 		text-align: center;
 	}
 }
-
+.stlp-2013-1 {
+	@include section-headers;
+}
 .modal {
 	form {
 	  padding: 0;	
@@ -37,7 +42,12 @@
 		margin: 5px 0;
 	}
 }
-
+.inline-headings {
+	h1, h2, h3, h4, h5, h6 {
+		display: inline-block;
+		border-bottom: none;
+	}
+}
 .main_content_image {
 	position: relative;
 	display: inline-block;
@@ -53,6 +63,13 @@
 		color: white;
 		.text {opacity: 1.0}
 	}
+}
+
+.vertical-text {
+	width: 1px;
+	padding: 5px 0;
+	text-transform: uppercase;
+	word-wrap: break-word;
 }
 
 .help {

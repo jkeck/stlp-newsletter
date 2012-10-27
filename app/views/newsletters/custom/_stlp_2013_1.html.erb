@@ -1,0 +1,27 @@
+<div class="row session-details">
+  <div class="span10">
+    <h1>Highlight Reel</h1>
+  </div>
+  <div class="span2">Session <%= @newsletter.session %><br/><%= @newsletter.dates %></div>
+</div>
+<div class="row">
+  <div class="span6"><%= render :partial => "main_contents/main_contents", :locals => {:main_contents => @newsletter.main_content} %></div>
+  <div class="span1"><h2 class="vertical-text hidden-phone">Simplify</h2></div>
+  <div class="span5"><%= render :partial => "next_steps/next_steps", :locals => {:next_steps => @newsletter.next_step} %></div>
+</div>
+<div class="row">
+  <div class="span6"><%= render :partial => "quotes/quotes", :locals => {:quotes => @newsletter.quotes}%></div>
+  <div class="span1"><h2 class="vertical-text hidden-phone">Automate</h2></div>
+  <div class="span5"><%= render :partial => "key_points/key_points", :locals => {:key_points => @newsletter.key_point} %></div>
+</div>
+<div class="row">
+  <div class="span6"><%= render :partial => "further_readings/further_readings", :locals => {:further_readings => @newsletter.further_readings} %></div>
+  <div class="span1"><h2 class="vertical-text hidden-phone">Innovate</h2></div>
+  <div class="span5"><%= render :partial => "assignments/assignments", :locals => {:assignments => @newsletter.assignments} %></div>
+</div>
+
+<div class="row visible-phone">
+  <div class="span12 inline-headings">
+    <h3>Simplify /</h3> <h3>Automate /</h3> <h3>Innovate</h3>
+  </div>
+</div>
