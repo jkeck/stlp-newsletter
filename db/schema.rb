@@ -11,11 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121026201355) do
+ActiveRecord::Schema.define(:version => 20121027193020) do
 
   create_table "assignments", :force => true do |t|
     t.text     "description"
     t.string   "link"
+    t.integer  "newsletter_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "carousels", :force => true do |t|
+    t.string   "image_url"
+    t.text     "caption"
     t.integer  "newsletter_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false

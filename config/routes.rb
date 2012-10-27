@@ -1,4 +1,6 @@
 StlpNewsletter::Application.routes.draw do
+  resources :carousels
+
   resources :further_readings
 
   resources :main_contents

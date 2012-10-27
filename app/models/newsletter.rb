@@ -8,4 +8,5 @@ class Newsletter < ActiveRecord::Base
   has_many :misc_contents
   has_one  :main_content
   has_many :further_readings
+  has_many :carousels
 end
