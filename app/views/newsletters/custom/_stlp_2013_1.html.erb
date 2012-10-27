@@ -21,6 +21,12 @@
   <div class="span1"><h2 class="vertical-text hidden-phone">Innovate</h2></div>
   <div class="span5"><%= render :partial => "assignments/assignments", :locals => {:assignments => @newsletter.assignments} %></div>
 </div>
+<div class="row">
+  <div class="span12">
+    <%= render :partial => "misc_contents/misc_contents", :locals => {:misc_contents => @newsletter.misc_contents} %>
+  </div>
+</div>
+
 
 <div class="row visible-phone">
   <div class="span12 inline-headings">
