@@ -14,4 +14,8 @@
 /log/*.log
 /tmp
 
+# rvm
 .rvmrc
+
+# config files
+users.yml

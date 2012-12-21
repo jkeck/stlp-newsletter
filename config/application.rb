@@ -60,3 +60,4 @@ module StlpNewsletter
     config.assets.version = '1.0'
   end
 end
+StlpNewsletter::Application.config.authed_users = YAML.load_file("#{Rails.root}/config/users.yml")[Rails.env]["users"].split

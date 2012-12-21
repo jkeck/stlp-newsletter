@@ -13,13 +13,15 @@
   <tr>
     <td><%= key_point.description %></td>
     <td><%= key_point.points %></td>
-    <td><%= link_to 'Show', key_point %></td>
-    <td><%= link_to 'Edit', edit_key_point_path(key_point) %></td>
-    <td><%= link_to 'Destroy', key_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- if authed_user? -%>
+      <td><%= link_to 'Show', key_point %></td>
+      <td><%= link_to 'Edit', edit_key_point_path(key_point) %></td>
+      <td><%= link_to 'Destroy', key_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- end -%>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Key point', new_key_point_path %>
+<%= link_to('New Key point', new_key_point_path) if authed_user? %>

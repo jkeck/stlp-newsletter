@@ -15,13 +15,15 @@
     <td><%= carousel.image_url %></td>
     <td><%= carousel.caption %></td>
     <td><%= carousel.references %></td>
-    <td><%= link_to 'Show', carousel %></td>
-    <td><%= link_to 'Edit', edit_carousel_path(carousel) %></td>
-    <td><%= link_to 'Destroy', carousel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- if authed_user? -%>
+      <td><%= link_to 'Show', carousel %></td>
+      <td><%= link_to 'Edit', edit_carousel_path(carousel) %></td>
+      <td><%= link_to 'Destroy', carousel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- end -%>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Carousel', new_carousel_path %>
+<%= link_to('New Carousel', new_carousel_path) if authed_user? %>

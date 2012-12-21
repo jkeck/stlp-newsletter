@@ -15,13 +15,21 @@
     <td><%= newsletter.session %></td>
     <td><%= newsletter.dates %></td>
     <td><%= newsletter.year %></td>
-    <td><%= link_to 'Show', newsletter %></td>
-    <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
-    <td><%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', "stlp-#{newsletter.year}/#{newsletter.session}" %></td>
+    <%- if authed_user? -%>
+      <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
+      <td><%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- end -%>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Newsletter', new_newsletter_path %>
+<%- if authed_user? -%>
+  <%= link_to('New Newsletter', new_newsletter_path) %><br/>
+  <%= link_to 'Logout', logout_path %>
+<%- else -%>
+  <%= link_to('Login', login_path(:referrer=>request.fullpath)) %>
+<%- end -%>
+

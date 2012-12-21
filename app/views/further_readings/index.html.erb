@@ -15,13 +15,15 @@
     <td><%= further_reading.url %></td>
     <td><%= further_reading.description %></td>
     <td><%= further_reading.newsletter %></td>
-    <td><%= link_to 'Show', further_reading %></td>
-    <td><%= link_to 'Edit', edit_further_reading_path(further_reading) %></td>
-    <td><%= link_to 'Destroy', further_reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- if authed_user? -%>
+      <td><%= link_to 'Show', further_reading %></td>
+      <td><%= link_to 'Edit', edit_further_reading_path(further_reading) %></td>
+      <td><%= link_to 'Destroy', further_reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- end -%>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Further reading', new_further_reading_path %>
+<%= link_to('New Further reading', new_further_reading_path) if authed_user? %>

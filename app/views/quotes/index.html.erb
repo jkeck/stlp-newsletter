@@ -13,13 +13,15 @@
   <tr>
     <td><%= quote.quote %></td>
     <td><%= quote.author %></td>
-    <td><%= link_to 'Show', quote %></td>
-    <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
-    <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- if authed_user? -%>
+      <td><%= link_to 'Show', quote %></td>
+      <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
+      <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- end -%>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Quote', new_quote_path %>
+<%= link_to('New Quote', new_quote_path) if authed_user? %>

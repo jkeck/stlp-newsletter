@@ -19,6 +19,9 @@ StlpNewsletter::Application.routes.draw do
   
   match 'stlp-:year(/:session)' => "newsletters#find", :as => "newsletter_find"
 
+  match 'login' => "login#login", :as => "login"
+  match 'logout' => "login#logout", :as => "logout"
+
   root :to => 'newsletters#index'
 
 end

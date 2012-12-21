@@ -13,13 +13,15 @@
   <tr>
     <td><%= next_step.body %></td>
     <td><%= next_step.steps %></td>
-    <td><%= link_to 'Show', next_step %></td>
-    <td><%= link_to 'Edit', edit_next_step_path(next_step) %></td>
-    <td><%= link_to 'Destroy', next_step, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- if authed_user? -%>
+      <td><%= link_to 'Show', next_step %></td>
+      <td><%= link_to 'Edit', edit_next_step_path(next_step) %></td>
+      <td><%= link_to 'Destroy', next_step, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%- end -%>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Next step', new_next_step_path %>
+<%= link_to('New Next step', new_next_step_path) if authed_user? %>
