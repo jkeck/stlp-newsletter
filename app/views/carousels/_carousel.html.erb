@@ -6,7 +6,9 @@
       <%- carousels.each do |carousel| -%>
         <div class="item<%= " active" if carousel == carousels.first %>">
           <%= image_tag(carousel.image_url) %>
-          <div class="carousel-caption"><p><%= carousel.caption %></p></div>
+          <%- unless carousel.caption.blank? -%>
+            <div class="carousel-caption"><p><%= carousel.caption %></p></div>
+          <%- end -%>
         </div>
       <%- end -%>
     </div>
