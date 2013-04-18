@@ -1,0 +1,28 @@
+<div class="row session-details">
+  <div class="span10">
+    <h1>
+      <span class="hidden-phone">STLP Session <%= @newsletter.session %> Highlight Reel</span>
+      <span class="visible-phone">STLP Highlight Reel</span>
+    </h1>
+  </div>
+  <div class="span2">Session <%= @newsletter.session %><br/><%= @newsletter.dates %></div>
+</div>
+<div class="row">
+  <div class="span6">
+    <%= render :partial => "carousels/carousel", :locals => {:carousels => @newsletter.carousels} %>
+  </div>
+  <div class="span5 offset1"><%= render :partial => "next_steps/next_steps", :locals => {:next_steps => @newsletter.next_step} %></div>
+</div>
+<div class="row">
+  <div class="span6"><%= render :partial => "assignments/assignments", :locals => {:assignments => @newsletter.assignments} %></div>
+  <div class="span5 offset1"><%= render :partial => "key_points/key_points", :locals => {:key_points => @newsletter.key_point} %></div>
+</div>
+<div class="row">
+  <div class="span6"><%= render :partial => "further_readings/further_readings", :locals => {:further_readings => @newsletter.further_readings} %></div>
+  <div class="span5 offset1"><%= render :partial => "quotes/quotes", :locals => {:quotes => @newsletter.quotes}%></div>
+</div>
+<div class="row">
+  <div class="span12">
+    <%= render :partial => "misc_contents/misc_contents", :locals => {:misc_contents => @newsletter.misc_contents} %>
+  </div>
+</div>
